@@ -1,4 +1,4 @@
-package nyc.c4q.powershopper.ui.main;
+package nyc.c4q.powershopper.ui;
 
 import android.arch.lifecycle.ViewModel;
 
