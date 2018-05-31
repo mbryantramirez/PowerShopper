@@ -16,14 +16,14 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 import nyc.c4q.powershopper.R;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     private ActionBarDrawerToggle drawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
+        setContentView(R.layout.home_activity);
         setupToolbar();
         setupNavigationDrawer();
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         drawerToggle = new ActionBarDrawerToggle(
                 this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(drawerToggle);
-        NavController navController = Navigation.findNavController(this, R.id.main_fragment);
+        NavController navController = Navigation.findNavController(this, R.id.shopper_nav_fragment);
         NavigationView navigationView = findViewById(R.id.navigation_view);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
