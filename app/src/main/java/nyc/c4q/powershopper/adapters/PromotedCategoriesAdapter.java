@@ -5,13 +5,24 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
+import nyc.c4q.powershopper.db.entity.PromotedCategoriesEntity;
 import nyc.c4q.powershopper.models.PromotedData;
 
 public class PromotedCategoriesAdapter extends RecyclerView.Adapter<PromotedCategoriesAdapter.ViewHolder> {
 
+
+    public List<PromotedCategoriesEntity> values;
     private PromotedData[] promotedData;
 
     public PromotedCategoriesAdapter() {
+    }
+
+
+    public void setValues(List<PromotedCategoriesEntity> values) {
+        this.values = values;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -29,6 +40,10 @@ public class PromotedCategoriesAdapter extends RecyclerView.Adapter<PromotedCate
     @Override
     public int getItemCount() {
         return 0;
+    }
+
+    public void setPromotedCategoriesList(List<PromotedCategoriesEntity> myPromotedCategories) {
+
     }
 
 

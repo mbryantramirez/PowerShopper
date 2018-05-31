@@ -1,5 +1,6 @@
 package nyc.c4q.powershopper.ui;
 
+import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.os.Bundle;
@@ -10,8 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 import nyc.c4q.powershopper.R;
 import nyc.c4q.powershopper.adapters.PromotedCategoriesAdapter;
+import nyc.c4q.powershopper.db.entity.PromotedCategoriesEntity;
 import nyc.c4q.powershopper.viewmodels.PromotedCategoriesViewModel;
 
 public class HomeFragment extends Fragment {
@@ -41,9 +45,11 @@ public class HomeFragment extends Fragment {
 
     private void subscribeUi(PromotedCategoriesAdapter adapter) {
 
-        viewModel.getPromotedCategories().observe(this,Observer{
-
-        })
+        viewModel.getPromotedCategories().observe(this, myPromotedCategories -> {
+            if (myPromotedCategories != null) {
+                adapter.setValues(myPromotedCategories);
+            }
+        });
     }
 
 }
