@@ -2,11 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@+id/main_fragment">
+    app:startDestination="@+id/shopper_nav_fragment">
 
     <fragment
-        android:id="@+id/main_fragment"
-        android:name="nyc.c4q.powershopper.ui.MainFragment"
-        tools:layout="@layout/main_fragment" />
+        android:id="@+id/shopper_nav_fragment"
+        android:name="nyc.c4q.powershopper.ui.HomeFragment"
+        tools:layout="@layout/home_fragment"/>
 
 </navigation>
